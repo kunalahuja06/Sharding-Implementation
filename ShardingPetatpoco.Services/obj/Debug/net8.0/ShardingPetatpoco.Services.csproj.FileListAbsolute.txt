@@ -1,0 +1,15 @@
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\bin\Debug\net8.0\ShardingPetatpoco.Services.deps.json
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\bin\Debug\net8.0\ShardingPetatpoco.Services.dll
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\bin\Debug\net8.0\ShardingPetatpoco.Services.pdb
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\bin\Debug\net8.0\ShardingPetapoco.Data.dll
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\bin\Debug\net8.0\ShardingPetapoco.Data.pdb
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.csproj.AssemblyReference.cache
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.AssemblyInfoInputs.cache
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.AssemblyInfo.cs
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.csproj.CoreCompileInputs.cache
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.csproj.CopyComplete
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.dll
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\refint\ShardingPetatpoco.Services.dll
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ShardingPetatpoco.Services.pdb
+C:\Users\kunal.a\source\repos\ShardingPetapoco\ShardingPetatpoco.Services\obj\Debug\net8.0\ref\ShardingPetatpoco.Services.dll

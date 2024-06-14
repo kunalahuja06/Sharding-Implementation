@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "L+01npa0+/Rfw6Cb/MQRAsRsyBpE47fnXNDiWmIKcBM=",
+  "Source": "ShardingPetapoco.WebAPI",
+  "BasePath": "_content/ShardingPetapoco.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

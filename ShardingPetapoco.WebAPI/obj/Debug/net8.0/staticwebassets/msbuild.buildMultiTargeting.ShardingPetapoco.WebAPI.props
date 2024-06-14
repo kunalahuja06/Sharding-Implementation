@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ShardingPetapoco.WebAPI.props" />
+</Project>
