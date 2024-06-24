@@ -1,20 +1,26 @@
-﻿using ShardingPetapoco.Data.Data;
+﻿using Microsoft.Extensions.Logging;
+using PetaPoco;
+using ShardingPetapoco.Data.Data;
 
 namespace ShardingPetapoco.Data.Factory
 {
     public class DbContextFactory
     {
-        private readonly MasterDbContext _masterDbContext;
+        private readonly string _shardMapName;
 
-        public DbContextFactory(MasterDbContext masterDbContext)
+        private readonly ILoggerFactory _loggerFactory;
+
+        public DbContextFactory(string shardMapName, ILoggerFactory loggerFactory)
         {
-            _masterDbContext = masterDbContext;
+            _shardMapName = shardMapName;
+            _loggerFactory = loggerFactory;
         }
 
         public DBContext CreateDbContext(int tenantId)
         {
-            string connectionString = _masterDbContext.GetServerbyTenantId(tenantId).ConnectionString;
-            return new DBContext(connectionString);
+            string connectionString = ShardingManager.GetShardConnectionString(_shardMapName, tenantId);
+            var logger = _loggerFactory.CreateLogger<Database>();
+            return new DBContext(connectionString, logger);
         }
     }
 }

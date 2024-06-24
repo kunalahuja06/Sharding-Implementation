@@ -1,25 +1,35 @@
-﻿using PetaPoco;
+﻿using Microsoft.Extensions.Logging;
+using PetaPoco;
 
 namespace ShardingPetapoco.Data.Data
 {
-    public class DBContext : IDisposable
+    public class DBContext
     {
         private readonly Database Db;
 
-        public DBContext(string connectionString)
+        private readonly ILogger<Database> Logger;
+
+        public DBContext(string connectionString, ILogger<Database> logger)
         {
+            Logger = logger;
             Db = new Database(connectionString, "System.Data.SqlClient");
+            Db.CommandExecuting += (sender, args) =>
+            {
+                Logger.LogInformation($"Executing command: {args.Command.CommandText}");
+            };
             Db.OpenSharedConnection();
         }
 
         public List<T> Query<T>(string sql, params object[] args)
         {
-            return Db.Fetch<T>(sql, args);
+            IEnumerable<T> result = Db.Query<T>(sql, args);
+            return result.ToList();
         }
 
-        public void Dispose()
+        public int Execute(string sql, params object[] args)
         {
-            Db.Dispose();
+            var result = Db.Execute(sql, args);
+            return result;
         }
     }
 }

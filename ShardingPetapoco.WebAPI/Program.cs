@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using PetaPoco;
 using ShardingPetapoco.Data.Data;
 using ShardingPetapoco.Data.Factory;
@@ -8,20 +9,42 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddLogging();
 
-builder.Services.AddSingleton((sp) =>
+builder.Services.AddScoped<RequestContextBuilder>();
+
+builder.Services.AddScoped(sp =>
 {
-    var db = new Database(builder.Configuration["ConnectionStrings:MasterDB"], "System.Data.SqlClient");
-    db.OpenSharedConnection();
-    return db;
+    var rc = sp.GetRequiredService<RequestContextBuilder>();
+    return rc.BuildRequestContext();
 });
-builder.Services.AddSingleton<MasterDbContext>();
-builder.Services.AddScoped<DbContextFactory>();
+
+string shardMapName = "TenantShardMap";
+builder.Services.AddSingleton(sp =>
+{
+    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+    return new DbContextFactory(shardMapName, loggerFactory);
+});
+
+builder.Services.AddScoped(sp =>
+{
+    var dbContextFactory = sp.GetRequiredService<DbContextFactory>();
+    var requestContext = sp.GetRequiredService<RequestContext>();
+    return dbContextFactory.CreateDbContext(requestContext.TenantId);
+});
+
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+builder.Services.AddSingleton(new ShardingManager(builder.Configuration));
 
 var app = builder.Build();
 

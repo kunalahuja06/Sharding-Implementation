@@ -15,9 +15,15 @@ namespace ShardingPetapoco.WebAPI.Controllers
         }
 
         [HttpGet]
-        public List<Employee> GetEmployees(int tenantId)
+        public List<Employee> GetEmployees()
         {
-            return _employeeService.GetEmployees(tenantId);
+            return _employeeService.GetEmployees();
+        }
+
+        [HttpPost]
+        public int AddEmployee(Employee employee)
+        {
+            return _employeeService.AddEmployee(employee);
         }
     }
 }

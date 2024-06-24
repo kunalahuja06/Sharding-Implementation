@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShardingPetatpoco.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61c29fb2d51ea67adf165e222465b152e7d1617f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShardingPetatpoco.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShardingPetatpoco.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

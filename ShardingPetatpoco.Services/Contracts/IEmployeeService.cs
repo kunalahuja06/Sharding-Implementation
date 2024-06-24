@@ -4,6 +4,8 @@ namespace ShardingPetatpoco.Services.Contracts
 {
     public interface IEmployeeService
     {
-        List<Employee> GetEmployees(int tenantId);
+        List<Employee> GetEmployees();
+
+        int AddEmployee(Employee employee);
     }
 }
